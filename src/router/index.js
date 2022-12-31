@@ -2,7 +2,7 @@
  * @Author: zd
  * @Date: 2022-12-31 18:47:44
  * @LastEditors: zd
- * @LastEditTime: 2022-12-31 18:59:06
+ * @LastEditTime: 2022-12-31 23:20:14
  * @Description: 路由
  */
 import Vue from 'vue'
@@ -14,17 +14,18 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'home',
+    name: 'HomeView',
     component: HomeView
+  },
+  {
+    path: '/login',
+    name: 'LoginView',
+    // route level code-splitting
+    // this generates a separate chunk (about.[hash].js) for this route
+    // which is lazy-loaded when the route is visited.
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
   }
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   // route level code-splitting
-  //   // this generates a separate chunk (about.[hash].js) for this route
-  //   // which is lazy-loaded when the route is visited.
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  // }
 ]
 
 const router = new VueRouter({
