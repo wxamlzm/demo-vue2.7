@@ -2,11 +2,11 @@
  * @Author: zd
  * @Date: 2022-12-31 18:47:44
  * @LastEditors: zd
- * @LastEditTime: 2022-12-31 18:58:51
- * @Description: 
+ * @LastEditTime: 2022-12-31 23:15:19
+ * @Description: 首页
 -->
 <template>
-  <div class="home">hello world</div>
+  <div class="home-view">hello world</div>
 </template>
 
 <script>
