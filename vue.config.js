@@ -2,7 +2,7 @@
  * @Author: zd
  * @Date: 2023-01-01 00:12:05
  * @LastEditors: zd
- * @LastEditTime: 2023-01-02 00:43:04
+ * @LastEditTime: 2023-01-03 20:47:30
  * @Description:
  */
 const { defineConfig } = require('@vue/cli-service')
@@ -13,7 +13,7 @@ module.exports = defineConfig({
   css: {
     loaderOptions: {
       scss: {
-        additionalData: `@import "~@/assets/reset.scss";`
+        additionalData: `@import "@/assets/reset.scss";`
       }
     }
   }
