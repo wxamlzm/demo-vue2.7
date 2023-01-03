@@ -2,7 +2,7 @@
  * @Author: zd
  * @Date: 2022-12-31 23:15:38
  * @LastEditors: zd
- * @LastEditTime: 2022-12-31 23:50:07
+ * @LastEditTime: 2023-01-01 00:29:09
  * @Description: 登录界面
 -->
 <template>
@@ -27,12 +27,15 @@ export default {
 }
 </script>
 
-<style lang="sass">
+<style lang="scss">
 .login-view {
-  display:flex;
+  display: flex;
+  width: 100%;
+  height: 100%;
   .login-box {
     width: 50%;
-    margin: auto
+    height: 50%;
+    margin: auto;
   }
 }
 </style>
