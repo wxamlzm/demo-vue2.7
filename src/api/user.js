@@ -2,7 +2,7 @@
  * @Author: zd
  * @Date: 2023-01-05 23:17:50
  * @LastEditors: zd
- * @LastEditTime: 2023-01-05 23:24:26
+ * @LastEditTime: 2023-01-06 21:35:24
  * @Description: 测试api
  */
 
@@ -13,5 +13,5 @@
 import axios from 'axios'
 
 export function getUserLists () {
-  return axios.get('localhost:3000/user')
+  return axios.get('/user')
 }

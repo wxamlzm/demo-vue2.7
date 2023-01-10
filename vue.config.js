@@ -13,7 +13,7 @@ module.exports = defineConfig({
   devServer: {
     proxy: {
       '/': {
-        target: 'https://localhost:3000',
+        target: 'http://localhost:3000',
         ws: false,
         changeOrigin: true
       }
