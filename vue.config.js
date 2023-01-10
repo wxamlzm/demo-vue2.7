@@ -2,13 +2,23 @@
  * @Author: zd
  * @Date: 2023-01-01 00:12:05
  * @LastEditors: zd
- * @LastEditTime: 2023-01-03 20:47:30
+ * @LastEditTime: 2023-01-06 21:33:51
  * @Description:
  */
 const { defineConfig } = require('@vue/cli-service')
 
 module.exports = defineConfig({
   transpileDependencies: true,
+
+  devServer: {
+    proxy: {
+      '/': {
+        target: 'http://localhost:3000',
+        ws: false,
+        changeOrigin: true
+      }
+    }
+  },
 
   css: {
     loaderOptions: {
