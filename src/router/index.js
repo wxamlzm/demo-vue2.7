@@ -2,7 +2,7 @@
  * @Author: zd
  * @Date: 2022-12-31 18:47:44
  * @LastEditors: zd
- * @LastEditTime: 2022-12-31 23:20:14
+ * @LastEditTime: 2023-03-03 22:43:46
  * @Description: 路由
  */
 import Vue from 'vue'
@@ -25,6 +25,12 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ '../views/LoginView.vue')
+  },
+  {
+    path: '/threeThousandEmpire',
+    name: 'threeThousandEmpire',
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/ThreeThousandEmpire.vue')
   }
 ]
 
