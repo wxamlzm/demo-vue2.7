@@ -2,7 +2,7 @@
  * @Author: zd
  * @Date: 2022-12-31 18:47:44
  * @LastEditors: zd
- * @LastEditTime: 2023-10-19 08:18:17
+ * @LastEditTime: 2023-10-19 08:28:29
  * @Description: 
 -->
 <template>
@@ -12,7 +12,7 @@
 </template>
 
 // ssh测试
-// ssh动态测试
+// ssh动态测试2
 <style lang="scss">
 #app {
   width: 100%;
