@@ -2,8 +2,8 @@
  * @Author: zd
  * @Date: 2023-10-25 14:04:45
  * @LastEditors: zd
- * @LastEditTime: 2023-10-25 14:54:40
- * @FilePath: \zb-risk-web-dev\src\views\otc\stressTestPage\StressTestPage.vue
+ * @LastEditTime: 2023-10-25 18:46:07
+ * @FilePath: \demo-vue2.7\src\views\stressTestPage\StressTestPage.vue
  * @Description: 压力测试情景
 -->
 
@@ -51,7 +51,7 @@
 </template>
 
 <script>
-import { listPlateStressTestingResult } from '@/api/otc/stressTestPage.js'
+// import { listPlateStressTestingResult } from '@/api/otc/stressTestPage.js'
 import StressTestPageTable from './components/StressTestPageTable'
 
 // zdtest
@@ -67,26 +67,26 @@ export default {
       searchContent: {
         business_date: '20230912'
       },
-      tableData: []
+      tableData: testData
     }
   },
 
   mounted () {
-    this.initPage()
+    // this.initPage()
   },
 
   methods: {
-    async initPage () {
-      const businessData = this.searchContent.business_date
-      try {
-        const res = await listPlateStressTestingResult({
-          business_date: businessData
-        })
-        this.tableData = res
-      } catch (err) {
-        console.log(err)
-      }
-    },
+    // async initPage () {
+    //   const businessData = this.searchContent.business_date
+    //   try {
+    //     const res = await listPlateStressTestingResult({
+    //       business_date: businessData
+    //     })
+    //     this.tableData = res
+    //   } catch (err) {
+    //     console.log(err)
+    //   }
+    // },
     // 点击查询
     handleSearchClick () {}
   }

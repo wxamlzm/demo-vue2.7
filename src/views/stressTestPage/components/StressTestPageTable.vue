@@ -2,13 +2,38 @@
  * @Author: zd
  * @Date: 2023-10-25 14:43:45
  * @LastEditors: zd
- * @LastEditTime: 2023-10-25 16:53:20
- * @FilePath: \zb-risk-web-dev\src\views\otc\stressTestPage\components\StressTestPageTable.vue
+ * @LastEditTime: 2023-10-25 23:17:28
+ * @FilePath: \demo-vue2.7\src\views\stressTestPage\components\StressTestPageTable.vue
  * @Description: 压力情景测试的列表
 -->
 <template>
   <div class="stress-test-page-table">
-    <table border="true">
+    <div class="table-header">
+      <div class="category-col">板块</div>
+      <div class="data-col">
+        <div>压力情景</div>
+        <div class="sub-header">
+          <div>轻度压力</div>
+          <div>中度压力</div>
+          <div>重度压力</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-body">
+      <div class="category-body">
+        <!-- 大类 -->
+        <div class="category-title"></div>
+
+        <!-- 子类级关联数据的遍历 -->
+        <div class="data-panel">
+          <!-- 子类标题 -->
+          <div class="category-sub-title"></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <!-- <table border="true">
       <thead>
         <tr>
           <th rowspan="2" colspan="2">板块</th>
@@ -21,19 +46,21 @@
         </tr>
       </thead>
       <tbody>
-        <!-- 商品板块 -->
         <template>
           <tr>
             <td :rowspan="shangpinPlateCodeNameArray.length">商品板块</td>
             <td>{{ shangpinPlateCodeNameArray[0] }}</td>
           </tr>
 
-          <tr v-for="(item, index) in shangpinPlateCodeNameArray.slice(1)" :key="index">
+          <tr
+            v-for="(item, index) in shangpinPlateCodeNameArray.slice(1)"
+            :key="index"
+          >
             <td>{{ item }}</td>
           </tr>
         </template>
       </tbody>
-    </table>
+    </table> -->
   </div>
 </template>
 
@@ -89,7 +116,8 @@ export default {
           plateTypeNameGroup[plateTypeNameArray[0]]
         this.shangpinPlateCodeNameArray = plateCodeNameArray
       },
-      deep: true
+      deep: true,
+      immediate: true
     }
   },
   mounted () {
@@ -142,12 +170,27 @@ export default {
 
 <style lang="stylus">
 .stress-test-page-table {
-  table {
+  width: 100%;
+  .table-header {
+    // 让两个子项横向排列
     width: 100%;
-    border-collapse: collapse;
-  }
-  td {
-    width: auto;
+    display: flex;
+    // 添加border
+    div {
+      border: 1px solid #000;
+      width: auto;
+    }
+    div.data-col {
+      flex-grow:1;
+    }
+
+    // 子标题样式
+    .sub-header {
+      display: flex;
+      div {
+        flex-grow:1;
+      }
+    }
   }
 }
 </style>
