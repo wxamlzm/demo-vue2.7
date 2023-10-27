@@ -2,7 +2,7 @@
  * @Author: zd
  * @Date: 2022-12-31 18:47:44
  * @LastEditors: zd
- * @LastEditTime: 2023-10-27 15:33:51
+ * @LastEditTime: 2023-10-27 15:37:30
  * @Description: 路由
  */
 import Vue from 'vue'
@@ -31,6 +31,12 @@ const routes = [
     name: 'ThreeThousandEmpire',
     component: () =>
       import(/* webpackChunkName: "ThreeThousandEmpire" */ '../views/ThreeThousandEmpire.vue')
+  },
+  {
+    path: '/stressTestPage',
+    name: 'StressTestPage',
+    component: () =>
+      import(/* webpackChunkName: "StressTestPage" */ '@/views/stressTestPage/StressTestPage.vue')
   }
 ]
 
