@@ -2,8 +2,8 @@
  * @Author: zd
  * @Date: 2023-10-25 14:04:45
  * @LastEditors: zd
- * @LastEditTime: 2023-10-25 18:46:07
- * @FilePath: \demo-vue2.7\src\views\stressTestPage\StressTestPage.vue
+ * @LastEditTime: 2023-10-27 15:05:56
+ * @FilePath: \zb-risk-web-testing\src\views\otc\stressTestPage\StressTestPage.vue
  * @Description: 压力测试情景
 -->
 
@@ -44,14 +44,27 @@
 
     <div class="global-c-content-transverse-division" />
 
-    <main class="global-c-div-main">
-      <StressTestPageTable :tableData="tableData" />
+    <main class="global-c-div-main" style="overflow: auto">
+      <el-tabs v-model="activeTab" type="border-card">
+        <el-tab-pane label="市场" name="market"
+          ><StressTestPageTable
+            v-if="activeTab === 'market'"
+            :tableData="tableData"
+            tableType="market"
+        /></el-tab-pane>
+        <el-tab-pane label="信用" name="credit"
+          ><StressTestPageTable
+            v-if="activeTab === 'credit'"
+            :tableData="tableData"
+            tableType="credit"
+        /></el-tab-pane>
+      </el-tabs>
     </main>
   </div>
 </template>
 
 <script>
-// import { listPlateStressTestingResult } from '@/api/otc/stressTestPage.js'
+import { listPlateStressTestingResult } from '@/api/otc/stressTestPage.js'
 import StressTestPageTable from './components/StressTestPageTable'
 
 // zdtest
@@ -67,7 +80,9 @@ export default {
       searchContent: {
         business_date: '20230912'
       },
-      tableData: testData
+      tableData: testData,
+
+      activeTab: 'market'
     }
   },
 
@@ -76,17 +91,17 @@ export default {
   },
 
   methods: {
-    // async initPage () {
-    //   const businessData = this.searchContent.business_date
-    //   try {
-    //     const res = await listPlateStressTestingResult({
-    //       business_date: businessData
-    //     })
-    //     this.tableData = res
-    //   } catch (err) {
-    //     console.log(err)
-    //   }
-    // },
+    async initPage () {
+      const businessData = this.searchContent.business_date
+      try {
+        const res = await listPlateStressTestingResult({
+          business_date: businessData
+        })
+        this.tableData = res
+      } catch (err) {
+        console.log(err)
+      }
+    },
     // 点击查询
     handleSearchClick () {}
   }
